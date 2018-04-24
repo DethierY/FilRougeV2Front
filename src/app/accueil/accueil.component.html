@@ -42,14 +42,34 @@
       </button>
     </div>
 
+    <div class="ligne21" [ngStyle.xs]="{'margin-top.em': 0, 'width.%': 100}">
+      <button 
+        class="but6" 
+        [ngStyle.xs]="{'width.%': 100, 'margin-right.em': 0}" 
+        fxLayout.xs="row" 
+        routerLink="/victimes">
+        <mat-icon [ngStyle.xs]="{'margin-right.em': 2}">person</mat-icon>
+        <p [ngStyle.xs]="{'margin-right.em': 3, 'font-size.px': 24}">Victimes</p>
+      </button>
+
+      <button 
+        class="but7" 
+        [ngStyle.xs]="{'width.%': 100}"
+        fxLayout.xs="row" 
+        routerLink="/temoins">
+        <mat-icon [ngStyle.xs]="{'margin-right.em': 0.3}">person</mat-icon>
+        <p [ngStyle.xs]="{'margin-right.em': 3, 'font-size.px': 24}">Témoins</p>
+      </button>
+    </div>
+
     <div class="ligne3" [ngStyle.xs]="{'margin-top.em': 0, 'width.%': 100}">
       <button 
         class="but5" 
         [ngStyle.xs]="{'width.%': 100, 'margin-left.em': 0}"
         fxLayout.xs="row" 
-        routerLink="/acces">
-        <mat-icon [ngStyle.xs]="{'margin-right.em': 3.5}">lock_open</mat-icon>
-        <p [ngStyle.xs]="{'margin-right.em': 3, 'font-size.px': 24}">Accès</p>
+        routerLink="/agents">
+        <mat-icon [ngStyle.xs]="{'margin-right.em': 3.5}">person</mat-icon>
+        <p [ngStyle.xs]="{'margin-right.em': 3, 'font-size.px': 24}">Agents</p>
       </button>
     </div>
 </div> 

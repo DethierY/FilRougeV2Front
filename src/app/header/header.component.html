@@ -25,8 +25,8 @@
 
    <!-- Ajouter : Condition d'affichage selon grade exemple : Boutton "acces" s'affiche que pour le grade 1-->
 
-     <!-- <button mat-menu-item [style.color]="appService.selectedMenu == 'affaires' ?'red' : 'black'"  
-     (click)= "selectMenu('affaires')" (click)="changeTitle('Gestion des Affaires')" routerLink="/affaires"><mat-icon>folder</mat-icon>Affaires</button> -->
+     <button mat-menu-item [style.color]="appService.selectedMenu == 'affaires' ?'red' : 'black'"  
+     (click)= "selectMenu('affaires')" (click)="changeTitle('Gestion des Affaires')" routerLink="/affaires"><mat-icon>folder</mat-icon>Affaires</button>
 
 
      <button mat-menu-item [matMenuTriggerFor]="suspects" [style.color]="appService.selectedMenu == 'protagoniste' ?'red' : 'black'"  
@@ -34,16 +34,24 @@
    
 
     
-     <!-- <button  mat-menu-item [style.color]="appService.selectedMenu == 'armes' ?'red' : 'black'"  
-     (click)= "selectMenu('armes')" (click)="changeTitle('Enregistrer et consulter les armes')" routerLink="/armes"><mat-icon><img src="./../assets/image/site/icons8-gun-50.png"/></mat-icon>Armes</button> -->
+     <button  mat-menu-item [style.color]="appService.selectedMenu == 'armes' ?'red' : 'black'"  
+     (click)= "selectMenu('armes')" (click)="changeTitle('Enregistrer et consulter les armes')" routerLink="/armes"><mat-icon><img src="./../assets/image/site/icons8-gun-50.png"/></mat-icon>Armes</button>
      
 
      <button mat-menu-item [style.color]="appService.selectedMenu == 'vehicules' ?'red' : 'black'"  
      (click)= "selectMenu('vehicules')" (click)="changeTitle('Enregistrer et consulter les véhicules')" routerLink="/vehicules"><mat-icon>directions_car</mat-icon>Véhicules</button> 
+
+
+     <button mat-menu-item [style.color]="appService.selectedMenu == 'vehicules' ?'red' : 'black'"  
+     (click)= "selectMenu('vehicules')" (click)="changeTitle('Enregistrer et consulter les véhicules')" routerLink="/victimes"><mat-icon>personr</mat-icon>Victimes</button> 
+
+
+     <button mat-menu-item [style.color]="appService.selectedMenu == 'vehicules' ?'red' : 'black'"  
+     (click)= "selectMenu('vehicules')" (click)="changeTitle('Enregistrer et consulter les véhicules')" routerLink="/temoins"><mat-icon>personr</mat-icon>Témoins</button> 
      
 
-     <!-- <button mat-menu-item [style.color]="appService.selectedMenu == 'acces' ?'red' : 'black'"  
-     (click)= "selectMenu('acces')" (click)="changeTitle('Gestion des autorisations d\'accès')" routerLink="/acces"><mat-icon>lock_open</mat-icon>Accès</button>  -->
+     <button mat-menu-item [style.color]="appService.selectedMenu == 'acces' ?'red' : 'black'"  
+     (click)= "selectMenu('acces')" (click)="changeTitle('Gestion des autorisations d\'accès')" routerLink="/agents"><mat-icon>person</mat-icon>Agents</button> 
      
      
 
