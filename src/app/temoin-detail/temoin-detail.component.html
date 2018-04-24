@@ -10,7 +10,7 @@
         <h1>Détails d'un temoin</h1>
     </div>
 
-    <form #formCreate (ngSubmit)="updateSuspect(formCreate)" class="formulaire"
+    <form #formCreate (ngSubmit)="updateTemoin(formCreate)" class="formulaire"
     [ngStyle.md]="{'width.em': 50, 'height.em': 66}"
     [ngStyle.sm]="{'width.em': 40, 'height.em': 56}" 
     [ngStyle.xs]="{'width.em': 30, 'height.em': 66}">
@@ -59,7 +59,7 @@
         </div>
       </form>
       <button  
-      (click)="deleteSuspect()"
+      (click)="deleteTemoin()"
       [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
       [ngStyle.xs]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
       >Supprimer<mat-icon>delete</mat-icon></button>

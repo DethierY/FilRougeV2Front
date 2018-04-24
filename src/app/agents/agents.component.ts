@@ -18,7 +18,7 @@ export class AgentsComponent implements OnInit {
   agents = new Array<Agent>();
   agent: Agent;
 
-  colonnes = ['nom', 'prenom', 'taille'];
+  colonnes = ['nom', 'prenom', 'grade'];
   dataList;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

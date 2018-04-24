@@ -10,7 +10,7 @@
         <h1>Détails d'un agent</h1>
     </div>
 
-    <form #formCreate (ngSubmit)="updateSuspect(formCreate)" class="formulaire"
+    <form #formCreate (ngSubmit)="updateAgent(formCreate)" class="formulaire"
     [ngStyle.md]="{'width.em': 50, 'height.em': 66}"
     [ngStyle.sm]="{'width.em': 40, 'height.em': 56}" 
     [ngStyle.xs]="{'width.em': 30, 'height.em': 66}">
@@ -24,16 +24,19 @@
                 fxLayout.xs="row"
                 [ngStyle.sm]="{'width.%': 100, 'height.em': 15}" 
                 [ngStyle.xs]="{'width.%': 100, 'height.em': 15}"> 
-  
-                    <!--photo-->
-                    <div class="photo">
-                      <img class="image" src="{{suspect.photo}}" alt="photo du suspect {{suspect.pseudo}}">
-                    </div>
-                    <!--pseudo-->
-                    <div class="pseudo">
+
+                  <!--Nom-->
+                  <div class="pseudo">
+                    <mat-form-field>
+                        <input matInput type="text" name="pseudo" placeholder="{{suspect.pseudo}}" 
+                        [(ngModel)]="suspect.pseudo"> 
+                    </mat-form-field>
+                  </div>
+                    <!--Prénom-->
+                    <div class="prenom">
                       <mat-form-field>
-                          <input matInput type="text" name="pseudo" placeholder="{{suspect.pseudo}}" 
-                          [(ngModel)]="suspect.pseudo"> 
+                          <input matInput type="text" name="prenom" placeholder="{{agent.prenom}}" 
+                          [(ngModel)]="agent.prenom"> 
                       </mat-form-field>
                     </div>
                 </div>
@@ -43,40 +46,16 @@
                 [ngStyle.sm]="{'width.%': 100, 'height.em': 25}" 
                 [ngStyle.xs]="{'width.%': 100, 'height.em': 25}">
 
-
-                  <!--couleur peau-->
-                  <mat-form-field class="couleurp">
-                    <mat-select placeholder="{{suspect.couleurPeau}}" name="peau" [(ngModel)]="suspect.couleurPeau">
-                        <mat-option *ngFor="let cp of couleurPeau" [value]="cp.value" >
-                          {{ cp.viewValue }}
-                        </mat-option>
-                      </mat-select>
-                  </mat-form-field> 
-
-                  <!--couleur cheveux-->
-                  <mat-form-field class="couleurc">
-                    <mat-select placeholder="{{suspect.couleurCheveux}}" name="cheveux"  [(ngModel)]="suspect.couleurCheveux">
-                        <mat-option *ngFor="let c of couleurCheveux" [value]="c.value" >
-                          {{ c.viewValue }}
-                        </mat-option>
-                      </mat-select>
-                  </mat-form-field>
-
-                  <!--taille-->
-                  <mat-form-field class="taille">
-                    <input matInput type="text" name="taille" placeholder="{{suspect.taille}}" [(ngModel)]="suspect.taille"> 
-                 </mat-form-field>
-       
+                  <!--Grade-->
+                  <div class="grade">
+                    <mat-form-field>
+                        <input matInput type="text" name="grade" placeholder="{{agent.grade}}" 
+                        [(ngModel)]="agent.grade"> 
+                    </mat-form-field>
+                  </div>
                 </div>
        </div>
-       <div class="ligne2">
 
-                  <!--signes particulier-->
-                  <textarea matInput type ="text"  name="signe" placeholder="{{suspect.signe_particulier}}" 
-                  [(ngModel)]="suspect.signe_particuier"></textarea>
-
-
-       </div>
        <div class="ligne3">
             <button 
             [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
@@ -87,7 +66,7 @@
         </div>
       </form>
       <button  
-      (click)="deleteSuspect()"
+      (click)="deleteAgent()"
       [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
       [ngStyle.xs]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
       >Supprimer<mat-icon>delete</mat-icon></button>

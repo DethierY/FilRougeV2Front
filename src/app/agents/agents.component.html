@@ -24,11 +24,11 @@
 
 
               
-                <!--Filtre pour recherche suspect -->
+                <!--Filtre pour recherche agent -->
                 <mat-form-field>
                   <input matInput (keyup)="filtrerTableau($event.target.value)" placeholder="Recherche d'un agent">
                 </mat-form-field>
-                <!-- Affichage tableau des suspects -->
+                <!-- Affichage tableau des agents -->
                 <mat-table [dataSource]="dataList" matSort>
                     
                   <ng-container matColumnDef ="nom">
@@ -39,9 +39,9 @@
                       <mat-header-cell *matHeaderCellDef mat-sort-header>Prénom</mat-header-cell>
                       <mat-cell *matCellDef="let element">{{element.prenom}}</mat-cell>
                     </ng-container>
-                    <ng-container matColumnDef ="taille">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header>Taille</mat-header-cell>
-                        <mat-cell *matCellDef="let element">{{element.taille}}</mat-cell>
+                    <ng-container matColumnDef ="grade">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Grade</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.grade}}</mat-cell>
                     </ng-container>
                     <mat-header-row *matHeaderRowDef="colonnes"></mat-header-row>
                     <mat-row *matRowDef="let row; columns:colonnes" ></mat-row>
