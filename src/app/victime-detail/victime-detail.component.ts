@@ -5,6 +5,8 @@ import { VictimeService } from '../victime.service';
 import { Victime } from '../model';
 import { NgForm } from '@angular/forms';
 import { VictimesComponent } from '../victimes/victimes.component';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-victime-detail',
@@ -15,6 +17,12 @@ export class VictimeDetailComponent implements OnInit {
 
   victimeId: number;
   victime = new Victime(); // objet
+
+  colonnes = ['nom', 'lieu', 'date'];
+  dataList;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(
     private victimeComponent: VictimesComponent,

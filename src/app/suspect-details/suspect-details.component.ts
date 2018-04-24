@@ -5,6 +5,8 @@ import { SuspectService } from '../suspect.service';
 import { Suspect } from '../model';
 import { NgForm } from '@angular/forms';
 import { SuspectsComponent } from '../suspects/suspects.component';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-suspect-details',
@@ -27,6 +29,13 @@ export class SuspectDetailsComponent implements OnInit {
 
   suspectId: number;
   suspect = new Suspect(); // objet
+
+  colonnes = ['nom', 'lieu', 'date'];
+  dataList;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
 
   constructor(
     private suspectComponent: SuspectsComponent,

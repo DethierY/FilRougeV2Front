@@ -5,6 +5,8 @@ import { AgentService } from '../agent.service';
 import { Agent } from '../model';
 import { NgForm } from '@angular/forms';
 import { AgentsComponent } from '../agents/agents.component';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-agent-detail',
@@ -15,6 +17,12 @@ export class AgentDetailComponent implements OnInit {
 
   agentId: number;
   agent = new Agent(); // objet
+
+  colonnes = ['nom', 'lieu', 'date'];
+  dataList;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(
     private agentComponent: AgentsComponent,

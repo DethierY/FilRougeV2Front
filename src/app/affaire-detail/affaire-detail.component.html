@@ -91,5 +91,35 @@
       [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
       [ngStyle.xs]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
       >Supprimer<mat-icon>delete</mat-icon></button>
+
+        <!-- Affichage tableau des listes liées à l'affaire -->
+        <mat-table [dataSource]="dataList" matSort>
+            
+          <ng-container matColumnDef ="nomSuspect">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Suspect</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.nomSuspect}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef ="nomVictime">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Victime</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.nomVictime}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef ="nomSTemoin">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Témoin</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.nomTemoin}}</mat-cell>
+    </ng-container>
+          <ng-container matColumnDef ="nomVehicule">
+            <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Véhicule</strong></mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.nomVehicule | uppercase}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef ="nomArme">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Arme</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.nomArme}}</mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="colonnes"></mat-header-row>
+            <mat-row *matRowDef="let row; columns:colonnes" ></mat-row>
+        </mat-table>
+        <mat-paginator #paginator [pageSize]=5 [pageSizeOptions]="[5,10,20]" [showFirstLastButtons]="true" >
+        </mat-paginator>
 </div>
 

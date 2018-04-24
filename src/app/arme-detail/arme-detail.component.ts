@@ -5,6 +5,8 @@ import { ArmeService } from '../arme.service';
 import { Arme } from '../model';
 import { NgForm } from '@angular/forms';
 import { ArmesComponent } from '../armes/armes.component';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-arme-detail',
@@ -16,6 +18,12 @@ export class ArmeDetailComponent implements OnInit {
 
   armeId: number;
   arme = new Arme(); // objet
+
+  colonnes = ['nom', 'lieu', 'date'];
+  dataList;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(
     private armeComponent: ArmesComponent,

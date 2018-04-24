@@ -5,6 +5,8 @@ import { AffaireService } from '../affaire.service';
 import { Affaire } from '../model';
 import { NgForm } from '@angular/forms';
 import { AffairesComponent } from '../affaires/affaires.component';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-affaire-detail',
@@ -15,6 +17,13 @@ export class AffaireDetailComponent implements OnInit {
 
   affaireId: number;
   affaire = new Affaire(); // objet
+
+  colonnes = ['nomSuspect', 'nomVictime', 'nomTemoin', 'nomVehicule', 'nomArme'];
+  dataList;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
 
   constructor(
     private affaireComponent: AffairesComponent,

@@ -5,6 +5,8 @@ import { TemoinService } from '../temoin.service';
 import { Temoin } from '../model';
 import { NgForm } from '@angular/forms';
 import { TemoinsComponent } from '../temoins/temoins.component';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-temoin-detail',
@@ -16,6 +18,12 @@ export class TemoinDetailComponent implements OnInit {
 
   temoinId: number;
   temoin = new Temoin(); // objet
+
+  colonnes = ['nom', 'lieu', 'date'];
+  dataList;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(
     private temoinComponent: TemoinsComponent,
