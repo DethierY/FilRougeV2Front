@@ -44,6 +44,6 @@ export class VAjoutComponent implements OnInit {
         relativeTo: this.route
       });
     } ); }
+
   }
 
-}
