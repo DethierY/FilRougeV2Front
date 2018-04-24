@@ -1,0 +1,59 @@
+
+ <div  class="container" [ngStyle.xs]="{'margin-top.em': 0}">
+   
+        
+    <div class="ligne1" [ngStyle.xs]="{'width.%': 100}">
+      <button 
+        class="but1" 
+        [ngStyle.xs]="{'width.%': 100, 'margin-right.%': 0}"
+        fxLayout.xs="row" 
+        routerLink="/affaires">
+        <mat-icon [ngStyle.xs]="{'margin-right.em': 3}">folder</mat-icon>
+        <p [ngStyle.xs]="{'margin-right.em': 3, 'font-size.px': 24}">Affaires</p>
+      </button>
+
+      <button 
+        class="but2" 
+        [ngStyle.xs]="{'width.%': 100}"
+        fxLayout.xs="row" 
+        routerLink="/armes">
+        <mat-icon [ngStyle.xs]="{'margin-right.em': 3}"><img src="./../assets/image/site/iconGun.png"/></mat-icon>
+        <p [ngStyle.xs]="{'margin-right.em': 3, 'font-size.px': 24}">Armes</p>
+      </button>
+    </div>
+   
+    <div class="ligne2" [ngStyle.xs]="{'margin-top.em': 0, 'width.%': 100}">
+      <button 
+        class="but3" 
+        [ngStyle.xs]="{'width.%': 100, 'margin-right.em': 0}" 
+        fxLayout.xs="row" 
+        routerLink="/vehicules">
+        <mat-icon [ngStyle.xs]="{'margin-right.em': 2}">directions_car</mat-icon>
+        <p [ngStyle.xs]="{'margin-right.em': 3, 'font-size.px': 24}">Véhicules</p>
+      </button>
+
+      <button 
+        class="but4" 
+        [ngStyle.xs]="{'width.%': 100}"
+        fxLayout.xs="row" 
+        routerLink="/suspect">
+        <mat-icon [ngStyle.xs]="{'margin-right.em': 0.3}">person</mat-icon>
+        <p [ngStyle.xs]="{'margin-right.em': 3, 'font-size.px': 24}">Suspects</p>
+      </button>
+    </div>
+
+    <div class="ligne3" [ngStyle.xs]="{'margin-top.em': 0, 'width.%': 100}">
+      <button 
+        class="but5" 
+        [ngStyle.xs]="{'width.%': 100, 'margin-left.em': 0}"
+        fxLayout.xs="row" 
+        routerLink="/acces">
+        <mat-icon [ngStyle.xs]="{'margin-right.em': 3.5}">lock_open</mat-icon>
+        <p [ngStyle.xs]="{'margin-right.em': 3, 'font-size.px': 24}">Accès</p>
+      </button>
+    </div>
+</div> 
+
+
+    <!--Faire un ngIf: si ce n'est pas le grade 1 alors le bouton acces n'est pas affiché-->
+

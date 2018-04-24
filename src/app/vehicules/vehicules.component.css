@@ -1,0 +1,108 @@
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly ;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+        .coteGauche {
+            margin-left: 2em;
+            margin-bottom: 3em;
+            width: 30%;
+            height: 40em;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            overflow: scroll;
+        }
+                         .boutonDiv {
+                            margin-left: 0;
+                            width: 40%;
+                            height: 6em;
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
+                            flex-direction: row;
+                            align-items: center;
+                            flex-wrap: wrap;
+                        } 
+                                        
+                                .bouton {
+                                    width: 10em;
+                                    height: 5em; 
+                                    cursor: pointer;
+                                    background-color: rgb(252, 204, 0);
+                                    /* font-size: 20px; */
+                                    font-family: arial;
+                                    font-weight: bold;
+                                    border-radius: 10%;
+                                    box-shadow: 0px 15px 30px -7px #2038;
+                                    color: rgb(46, 156, 211);
+                                    display: flex;
+                                    justify-content: center;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    margin-left: 20%;
+
+                                }
+                                button:hover {
+                                    background-color: rgb(184, 157, 38);
+                                }
+                                
+                                button:active {
+                                    background-color: rgb(184, 157, 38);
+                                    box-shadow: 0 5px #666;
+                                    transform: translateY(4px);
+                                }
+                                        .texte {
+                                            font-size: 20px;
+                                            color: rgb(46, 156, 211); 
+                                        } 
+                                        .icon {
+                                            font-size: 24px;
+                                        }
+                
+                .titre {
+                    margin-top: 1em;
+                    font-size: 34px;
+                    font-style: bold;
+                    color: white;
+                    text-shadow: 2px 2px 8px grey;
+                }
+
+                mat-cell {
+                    text-align: left;
+                }
+                                
+                            .paragraphe {
+                                font-size: 22px;
+                                margin-left: 0;
+                                /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+                            }
+
+
+        .coteDroit {
+            width: 50%;
+            height: 40em;
+            margin-bottom: 3em;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            overflow: scroll;
+        }
+
+        /* .outlet {
+            width: 100%;
+            height: 100em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(238, 200, 200);
+        } */

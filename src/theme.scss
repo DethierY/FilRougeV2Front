@@ -1,0 +1,17 @@
+// Ajout du ce fichier dans angular-cli.json à coté du fichier css : styles[style.css, theme.scss]
+
+
+@import '~@angular/material/theming';
+ @include mat-core();
+
+
+  $my-app-primary: mat-palette($mat-blue-grey, 500, 400);
+  $my-app-accent:  mat-palette($mat-blue, 900);
+  $my-app-warn:    mat-palette($mat-red, A700);
+  // $my-app-foreground: mat-palette($mat-grey, 100);
+  // $my-app-background: mat-palette($mat-blue-grey, 50);
+  // Je n'arrive pas à ajouter le foreground et background.
+
+  $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+  @include angular-material-theme($my-app-theme);

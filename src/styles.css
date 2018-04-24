@@ -1,0 +1,14 @@
+/* Fichier Importé pour avoir un thème d'angular */
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+/* Ayant Ajouté le fichier theme.scss, l'import d'un thème d'angular doit être supprimé
+Tout se passe donc dans le fichier theme.scss */
+
+
+/* force le reset des navigateur sur les pagging et margin par défault*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");
+
+html, body {
+    height: 100%;
+    width: 100%;
+}

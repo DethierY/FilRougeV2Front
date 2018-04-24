@@ -1,0 +1,36 @@
+<form>
+    <div class="pop" [ngStyle.xs]="{'width.%': 100, 'height.%': 100}">
+        
+      <h1 class="titre" mat-dialog-title>Connexion</h1>
+      <br>
+    
+       <div class="inputField" mat-dialog-content>
+        <p>Identifiant</p>
+        <mat-form-field>
+           <!-- <input matInput type="text" name="identifiant" [(ngModel)]="data.identifiant"> -->
+           <input matInput type="text" name="identifiant">
+          <input matInput >
+        </mat-form-field>
+      
+        <p>Mot de passe</p>
+        <mat-form-field>
+           <!-- <input matInput type="password" name="password" [(ngModel)]="data.password">  -->
+           <input matInput type="password" name="password">
+          <input matInput >
+        </mat-form-field>
+      </div>
+      <br>
+      
+      <div mat-dialog-actions class="bouton" >
+        <button class="but1" [ngStyle.xs]="{'margin-right.em': 0}"mat-button (click)="onNoClick()">Annuler</button>
+        <button class="but2" mat-button [mat-dialog-close]="data.connexion" cdkFocusInitial>Se connecter</button>
+      </div>
+      <br>
+    
+      <div class="oublie">
+          <p><a href="" RouterLink="" >Mot de passe oublié ?</a></p>
+            <!-- mettre la méthode ouvrirPopup quand on click sur cette phrase -->
+      </div>
+    
+    </div>
+</form>

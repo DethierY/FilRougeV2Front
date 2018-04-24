@@ -1,0 +1,32 @@
+.tool {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 6em;
+    /* background-color: rgba(25, 25, 206, 0.027); */
+    /* background-color: rgb(46, 156, 211); */
+    background-color: rgba(46, 156, 211, 0.O50);
+}
+
+        /* .boutonLogo {
+        
+        } */
+
+        .titre {
+            color: rgb(46, 156, 211);
+            font-style: bold;
+            font-size: 40px;
+            text-transform: uppercase;
+            margin-right: 4.5em;
+        }
+
+        .boutonIcon {
+            margin-right: 5em;
+            size: 20px;
+        }
+
+                .iconTool {
+                    color: rgb(46, 156, 211);
+                    font-size: 5em;
+                }

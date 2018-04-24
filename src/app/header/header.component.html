@@ -1,0 +1,60 @@
+
+<!-- <mat-toolbar  role="header" color="primary" fxLayoutAlign="space-between center">  -->
+    <mat-toolbar class="tool" role="header">
+    <button class="boutonLogo" mat-button>  
+      <img src="./../assets/image/site/logoTC.png"/>
+      <!--Mettre un routerLink pour tomber sur l'accueil quand on click sur le logo-->
+    </button>
+
+   
+    <h1 class="titre" fxHide.xs fxHide.sm>{{title}}blabla</h1>  
+  
+     
+
+    <!-- <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="login.valide">   -->
+    <button class="boutonIcon" mat-icon-button [matMenuTriggerFor]="menu" > 
+       <mat-icon class="iconTool">view_headline</mat-icon> 
+    </button>
+ </mat-toolbar>
+ 
+
+  <mat-menu #menu="matMenu">
+
+       
+
+
+   <!-- Ajouter : Condition d'affichage selon grade exemple : Boutton "acces" s'affiche que pour le grade 1-->
+
+     <!-- <button mat-menu-item [style.color]="appService.selectedMenu == 'affaires' ?'red' : 'black'"  
+     (click)= "selectMenu('affaires')" (click)="changeTitle('Gestion des Affaires')" routerLink="/affaires"><mat-icon>folder</mat-icon>Affaires</button> -->
+
+
+     <button mat-menu-item [matMenuTriggerFor]="suspects" [style.color]="appService.selectedMenu == 'protagoniste' ?'red' : 'black'"  
+     (click)= "selectMenu('suspects')" (click)="changeTitle('Gestion des suspects')"  routerLink="/suspect"><mat-icon>person</mat-icon>Suspects</button>
+   
+
+    
+     <!-- <button  mat-menu-item [style.color]="appService.selectedMenu == 'armes' ?'red' : 'black'"  
+     (click)= "selectMenu('armes')" (click)="changeTitle('Enregistrer et consulter les armes')" routerLink="/armes"><mat-icon><img src="./../assets/image/site/icons8-gun-50.png"/></mat-icon>Armes</button> -->
+     
+
+     <button mat-menu-item [style.color]="appService.selectedMenu == 'vehicules' ?'red' : 'black'"  
+     (click)= "selectMenu('vehicules')" (click)="changeTitle('Enregistrer et consulter les véhicules')" routerLink="/vehicules"><mat-icon>directions_car</mat-icon>Véhicules</button> 
+     
+
+     <!-- <button mat-menu-item [style.color]="appService.selectedMenu == 'acces' ?'red' : 'black'"  
+     (click)= "selectMenu('acces')" (click)="changeTitle('Gestion des autorisations d\'accès')" routerLink="/acces"><mat-icon>lock_open</mat-icon>Accès</button>  -->
+     
+     
+
+   </mat-menu>
+
+    <!-- <mat-menu #protagoniste="matMenu">
+     <button *ngFor="let personne of listePersonne" routerLink="/protagonistes" >{{personne}}</button>
+    </mat-menu> -->
+
+  
+
+
+
+

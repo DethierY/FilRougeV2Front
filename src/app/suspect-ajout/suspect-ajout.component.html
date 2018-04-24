@@ -1,0 +1,112 @@
+<div class="container" 
+[ngStyle.md]="{'width.em': 50, 'height.em': 60}"
+[ngStyle.sm]="{'width.em': 40, 'height.em': 60}" 
+[ngStyle.xs]="{'width.em': 30, 'height.em': 60}">
+
+    <div class="titre"
+    [ngStyle.md]="{'width.em': 50, 'height.em': 4}"
+    [ngStyle.sm]="{'width.em': 40, 'height.em': 4}" 
+    [ngStyle.xs]="{'width.em': 30, 'height.em': 4}">
+        <h1>Création d'un suspect</h1>
+    </div>
+
+    <form #formCreate (ngSubmit)="onSubmit(formCreate)" class="formulaire"
+    [ngStyle.md]="{'width.em': 50, 'height.em': 66}"
+    [ngStyle.sm]="{'width.em': 40, 'height.em': 56}" 
+    [ngStyle.xs]="{'width.em': 30, 'height.em': 66}">
+
+        <div class="ligne1" 
+        fxLayout.sm="column"
+        fxLayout.xs="column">
+                <div class="coteGauche"
+                fxLayout="column"
+                fxLayout.sm="row"
+                fxLayout.xs="row"
+                [ngStyle.sm]="{'width.%': 100, 'height.em': 15}" 
+                [ngStyle.xs]="{'width.%': 100, 'height.em': 15}"> 
+  
+                    <!--photo-->
+                    <div class="photo">
+                      <mat-form-field class="">
+                        <mat-select placeholder="photo"  [(ngModel)]="suspect.photo" name="photo">
+                            <mat-option *ngFor="let p of photos" [value]="p.value">
+                              {{ p.viewValue }}
+                            </mat-option>
+                          </mat-select>
+                    </mat-form-field>
+                  </div>
+                 
+                    <!--pseudo-->
+                  <div class="pseudo">
+                    <mat-form-field>
+                        <input matInput type="text" name="pseudo" placeholder="pseudo" 
+                        [(ngModel)]="suspect.pseudo"> 
+                    </mat-form-field>
+                  </div>
+                </div>
+              
+                <div class="coteDroit"
+                fxLayout="column"
+                [ngStyle.sm]="{'width.%': 100, 'height.em': 25}" 
+                [ngStyle.xs]="{'width.%': 100, 'height.em': 25}">
+
+
+                  <!--couleur peau-->
+                  <mat-form-field class="">
+                      <mat-select placeholder="couleur peau" [(ngModel)]="suspect.couleurPeau" name="peau">
+                          <mat-option *ngFor="let cp of couleurPeau" [value]="cp.value">
+                            {{ cp.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                  </mat-form-field>
+                  <!-- <mat-form-field> -->
+                    <!-- <mat-label>Couleur de Peau</mat-label> -->
+                    <!-- <mat-select name="couleurPeau" required placeholder="reading text" [(ngModel)]="suspect.couleurPeau"> -->
+                        <!-- <mat-select name="couleurPeau" requiered placeholder="{{suspect.couleurPeau}}" 
+                        [(ngModel)]="suspect.couleurPeau" [ngModelOptions]="{standalone: true}"> -->
+                      <!-- <mat-option disabled>Choisissez</mat-option> -->
+                          <!-- <mat-option [value]="1">Blond</mat-option>
+                          <mat-option [value]="2">Brun</mat-option>
+                          <mat-option [value]="3">Noir</mat-option>
+                    </mat-select>
+                  </mat-form-field> -->
+
+                    <!--couleur cheveux-->
+                    <mat-form-field class="">
+                        <mat-select placeholder="couleur cheveux" name="cheveux" [(ngModel)]="suspect.couleurCheveux">
+                            <mat-option *ngFor="let c of couleurCheveux" [value]="c.value">
+                              {{ c.viewValue }}
+                            </mat-option>
+                          </mat-select>
+                    </mat-form-field>
+
+                      <!--taille-->
+                      <mat-form-field class="">
+                          <input matInput type="text" name="pseudo" placeholder="taille" [(ngModel)]="suspect.taille"> 
+                       </mat-form-field>
+       
+                </div>
+       </div>
+       <div class="ligne2">
+
+                    <!--signes particulier-->
+                    <mat-form-field class="signeP">
+                        <textarea matInput type ="text"  name="signe" placeholder="suspect.signeParticulier" 
+                        [(ngModel)]="suspect.signeParticuier"></textarea>
+                      </mat-form-field>
+
+       </div>
+       <div class="ligne3">
+            <button   
+            [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
+            [ngStyle.xs]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
+            type="submit">Annuler</button>
+
+            <button  
+            [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
+            [ngStyle.xs]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
+            type="submit">Soumettre</button>
+        </div>
+      </form>
+</div>
+
