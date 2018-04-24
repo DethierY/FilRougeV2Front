@@ -25,15 +25,20 @@
                 [ngStyle.sm]="{'width.%': 100, 'height.em': 15}" 
                 [ngStyle.xs]="{'width.%': 100, 'height.em': 15}"> 
   
-                    <!--photo-->
-                    <div class="photo">
-                      <img class="image" src="{{suspect.photo}}" alt="photo du suspect {{suspect.pseudo}}">
-                    </div>
-                    <!--pseudo-->
-                    <div class="pseudo">
+      
+                    <!--Nom-->
+                    <div class="nom">
                       <mat-form-field>
-                          <input matInput type="text" name="pseudo" placeholder="{{suspect.pseudo}}" 
-                          [(ngModel)]="suspect.pseudo"> 
+                          <input matInput type="text" name="nom" placeholder="{{suspect.nom}}" 
+                          [(ngModel)]="suspect.nom"> 
+                      </mat-form-field>
+                    </div>
+                </div>
+                    <!--prénom-->
+                    <div class="prenom">
+                      <mat-form-field>
+                          <input matInput type="text" name="prenom" placeholder="{{suspect.prenom}}" 
+                          [(ngModel)]="suspect.prenom"> 
                       </mat-form-field>
                     </div>
                 </div>

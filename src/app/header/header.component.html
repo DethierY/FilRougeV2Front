@@ -29,7 +29,7 @@
      (click)= "selectMenu('affaires')" (click)="changeTitle('Gestion des Affaires')" routerLink="/affaires"><mat-icon>folder</mat-icon>Affaires</button>
 
 
-     <button mat-menu-item [matMenuTriggerFor]="suspects" [style.color]="appService.selectedMenu == 'protagoniste' ?'red' : 'black'"  
+     <button mat-menu-item [style.color]="appService.selectedMenu == 'suspects' ?'red' : 'black'"  
      (click)= "selectMenu('suspects')" (click)="changeTitle('Gestion des suspects')"  routerLink="/suspect"><mat-icon>person</mat-icon>Suspects</button>
    
 
@@ -42,15 +42,15 @@
      (click)= "selectMenu('vehicules')" (click)="changeTitle('Enregistrer et consulter les véhicules')" routerLink="/vehicules"><mat-icon>directions_car</mat-icon>Véhicules</button> 
 
 
-     <button mat-menu-item [style.color]="appService.selectedMenu == 'vehicules' ?'red' : 'black'"  
+     <button mat-menu-item [style.color]="appService.selectedMenu == 'victimes' ?'red' : 'black'"  
      (click)= "selectMenu('vehicules')" (click)="changeTitle('Enregistrer et consulter les véhicules')" routerLink="/victimes"><mat-icon>personr</mat-icon>Victimes</button> 
 
 
-     <button mat-menu-item [style.color]="appService.selectedMenu == 'vehicules' ?'red' : 'black'"  
+     <button mat-menu-item [style.color]="appService.selectedMenu == 'temoins' ?'red' : 'black'"  
      (click)= "selectMenu('vehicules')" (click)="changeTitle('Enregistrer et consulter les véhicules')" routerLink="/temoins"><mat-icon>personr</mat-icon>Témoins</button> 
      
 
-     <button mat-menu-item [style.color]="appService.selectedMenu == 'acces' ?'red' : 'black'"  
+     <button mat-menu-item [style.color]="appService.selectedMenu == 'agents' ?'red' : 'black'"  
      (click)= "selectMenu('acces')" (click)="changeTitle('Gestion des autorisations d\'accès')" routerLink="/agents"><mat-icon>person</mat-icon>Agents</button> 
      
      

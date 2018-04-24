@@ -51,22 +51,18 @@
                         align-items: center;
 
                     }
-                            .photo {
+
+
+                            .nom {
                                 width: 100%;
                                 height: 20em;
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
                                 align-items: center;
-                                text-shadow: 2px 2px 8px grey;
-                                
+        
                             }
-                                    .image {
-                                        width: 25em;
-                                        height: 15em;
-                                    }
-
-                            .pseudo {
+                            .prenom {
                                 width: 100%;
                                 height: 20em;
                                 display: flex;
