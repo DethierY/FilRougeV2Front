@@ -51,24 +51,20 @@
                         align-items: center;
 
                     }
-                            .photo {
+                           
+
+                            .nom {
                                 width: 100%;
-                                height: 20em;
+                                height: 5em;
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
                                 align-items: center;
-                                text-shadow: 2px 2px 8px grey;
-                                
+        
                             }
-                                    .image {
-                                        width: 25em;
-                                        height: 15em;
-                                    }
-
-                            .pseudo {
+                            .prenom {
                                 width: 100%;
-                                height: 20em;
+                                height: 5em;
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
@@ -85,31 +81,17 @@
                         align-items: center;
 
                     }
-                            .couleurp {
-                                width: 16em;
+                            .etat {
+                                width: 100%;
                                 height: 5em;
-                            }
-                            .couleurc {
-                                width: 16em;
-                                height: 5em;
-                            }
-                            .taille {
-                                width: 16em;
-                                height: 5em;
-                            }
-            .ligne2 {
-                width: 100%;
-                height: 8em;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
 
-            }
-                    .signeP {
-                        width: 90%;
-                        height: 6em;
-                    }
+                            }
+
+  
             .ligne3 {
                 width: 100%;
                 height: 8em;

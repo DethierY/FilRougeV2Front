@@ -10,7 +10,7 @@
     [ngStyle.sm]="{'width.%': 80, 'height.em': 4, 'margin.%': 1, 'border-radius': 0}" 
     [ngStyle.xs]="{'width.%': 80, 'height.em': 4, 'margin.%': 0, 'border-radius': 0}">
       <p class="texte" fxHide.xs>Ajouter une victime</p>
-      <mat-icon class="icon" aria-label="Icon plus pour ajouter un suspect" >add_circle</mat-icon>
+      <mat-icon class="icon" aria-label="Icon plus pour ajouter une victime" >add_circle</mat-icon>
     </button>
 </div>
 
@@ -24,11 +24,11 @@
 
 
               
-                <!--Filtre pour recherche suspect -->
+                <!--Filtre pour recherche une victime -->
                 <mat-form-field>
-                  <input matInput (keyup)="filtrerTableau($event.target.value)" placeholder="Recherche d'un suspect">
+                  <input matInput (keyup)="filtrerTableau($event.target.value)" placeholder="Recherche d'une victime">
                 </mat-form-field>
-                <!-- Affichage tableau des suspects -->
+                <!-- Affichage tableau des victimes -->
                 <mat-table [dataSource]="dataList" matSort>
                     
                   <ng-container matColumnDef ="nom">
@@ -39,9 +39,9 @@
                       <mat-header-cell *matHeaderCellDef mat-sort-header>Prénom</mat-header-cell>
                       <mat-cell *matCellDef="let element">{{element.prenom}}</mat-cell>
                     </ng-container>
-                    <ng-container matColumnDef ="taille">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header>Taille</mat-header-cell>
-                        <mat-cell *matCellDef="let element">{{element.taille}}</mat-cell>
+                    <ng-container matColumnDef ="etat">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Etat</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.etat}}</mat-cell>
                     </ng-container>
                     <mat-header-row *matHeaderRowDef="colonnes"></mat-header-row>
                     <mat-row *matRowDef="let row; columns:colonnes" ></mat-row>

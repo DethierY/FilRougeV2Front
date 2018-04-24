@@ -19,7 +19,7 @@ export class TemoinsComponent implements OnInit {
   temoins = new Array<Temoin>();
   temoin: Temoin;
 
-  colonnes = ['nom', 'prenom', 'taille'];
+  colonnes = ['nom', 'prenom', 'date'];
   dataList;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

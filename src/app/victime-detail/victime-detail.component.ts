@@ -18,7 +18,7 @@ export class VictimeDetailComponent implements OnInit {
   victimeId: number;
   victime = new Victime(); // objet
 
-  colonnes = ['nom', 'lieu', 'date'];
+  colonnes = ['nom', 'prenom', 'etat'];
   dataList;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

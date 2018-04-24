@@ -18,7 +18,7 @@ export class ArmesComponent implements OnInit {
   armes = new Array<Arme>();
   arme: Arme;
 
-  colonnes = ['nom', 'prenom', 'taille'];
+  colonnes = ['type', 'modele', 'num'];
   dataList;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

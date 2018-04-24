@@ -18,7 +18,7 @@ export class VictimesComponent implements OnInit {
   victimes = new Array<Victime>();
   victime: Victime;
 
-  colonnes = ['nom', 'prenom', 'taille'];
+  colonnes = ['nom', 'prenom', 'etat'];
   dataList;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
