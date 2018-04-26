@@ -34,7 +34,7 @@ export class TemoinAjoutComponent implements OnInit {
   }
 
   onSubmit(spt: NgForm) {
-    // console.log('c\'est ici que ça va pas' + this.suspect.pseudo);
+
     this.temoinService.createTemoin(this.temoin)
     .subscribe( () => {
       this.temoinComponent.ngOnInit();

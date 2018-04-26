@@ -37,14 +37,20 @@ export class TemoinService {
 
   updateTemoin(temoin: Temoin): Observable<Temoin> {
     console.log('l\'appel à la méthode update fonctionne');
-    return this.http.put<Temoin>('http://localhost:8080/temoin/edit/' +
+    return this.http.put<Temoin>('http://localhost:8080/temoin/update/' +
     temoin.id, temoin, httpOptions) as Observable<Temoin>;
 
   }
 
-  deleteTemoin(id: number): Observable<any> {
+  // deleteTemoin(id: number): Observable<any> {
+  //   console.log('le delete fonctionne');
+  //   return this.http.delete<any>('http://localhost:8080/temoin/delete/' + id)
+  //   .pipe(delay(1000));
+  // }
+
+  deleteTemoin(temoin: Temoin): Observable<any> {
     console.log('le delete fonctionne');
-    return this.http.delete<any>('http://localhost:8080/temoin/delete/' + id)
+    return this.http.delete<any>('http://localhost:8080/temoin/delete/' + temoin.id)
     .pipe(delay(1000));
   }
 }

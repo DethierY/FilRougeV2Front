@@ -7,7 +7,7 @@
     </button>
 
    
-    <h1 class="titre" fxHide.xs fxHide.sm>{{title}}blabla</h1>  
+    <h1 class="titre" fxHide.xs fxHide.sm>{{title}}GEDESAFT</h1>  
   
      
 
@@ -26,7 +26,7 @@
    <!-- Ajouter : Condition d'affichage selon grade exemple : Boutton "acces" s'affiche que pour le grade 1-->
 
      <button mat-menu-item [style.color]="appService.selectedMenu == 'affaires' ?'red' : 'black'"  
-     (click)= "selectMenu('affaires')" (click)="changeTitle('Gestion des Affaires')" routerLink="/affaires"><mat-icon>folder</mat-icon>Affaires</button>
+     (click)= "selectMenu('affaires')" (click)="changeTitle('Gestion des Affaires')" routerLink="/affaire"><mat-icon>folder</mat-icon>Affaires</button>
 
 
      <button mat-menu-item [style.color]="appService.selectedMenu == 'suspects' ?'red' : 'black'"  

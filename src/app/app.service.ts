@@ -12,7 +12,6 @@ export class AppService {
   suspect: Suspect;
   selectedSuspect: Suspect;
 
-  
 
   constructor(private http: HttpClient) { }
 

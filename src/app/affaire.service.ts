@@ -23,7 +23,7 @@ export class AffaireService {
   }
 
 
-  getAffairets(): Observable<Affaire[]> {
+  getAffaires(): Observable<Affaire[]> {
     console.log('le get fonctionne');
     return this.http.get(`http://localhost:8080/affaire/list`) as Observable<Affaire[]>;
   }

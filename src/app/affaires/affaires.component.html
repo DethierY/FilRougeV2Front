@@ -31,22 +31,35 @@
                 <!-- Affichage tableau des suspects -->
                 <mat-table [dataSource]="dataList" matSort>
                     
-                  <ng-container matColumnDef ="nom">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Nom</strong></mat-header-cell>
-                    <mat-cell *matCellDef="let element">{{element.nom | uppercase}}</mat-cell>
+                  <ng-container matColumnDef ="dossier">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Dossier</strong></mat-header-cell>
+                    <mat-cell *matCellDef="let element">{{element.dossier | uppercase}}</mat-cell>
                   </ng-container>
-                  <ng-container matColumnDef ="prenom">
-                      <mat-header-cell *matHeaderCellDef mat-sort-header>Prénom</mat-header-cell>
-                      <mat-cell *matCellDef="let element">{{element.prenom}}</mat-cell>
+                  <ng-container matColumnDef ="lieu">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header>Lieu</mat-header-cell>
+                      <mat-cell *matCellDef="let element">{{element.lieu}}</mat-cell>
                     </ng-container>
-                    <ng-container matColumnDef ="taille">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header>Taille</mat-header-cell>
-                        <mat-cell *matCellDef="let element">{{element.taille}}</mat-cell>
+                    <ng-container matColumnDef ="dateOuverture">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Date de création</mat-header-cell>
+                        <mat-cell *matCellDef="let element">{{element.dateOuverture}}</mat-cell>
                     </ng-container>
+                    <ng-container matColumnDef="actions">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+                      <mat-cell *matCellDef="let element" >
+                           <button (click)="afficherId(element.id)" mat-button color="primary" >Détail</button> 
+                      </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="action">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+                    <mat-cell *matCellDef="let element" >
+                         <button (click)="supprimerId(element.id)" mat-button color="warn">Supprimer</button> 
+                    </mat-cell>
+                </ng-container>
+                    
                     <mat-header-row *matHeaderRowDef="colonnes"></mat-header-row>
                     <mat-row *matRowDef="let row; columns:colonnes" ></mat-row>
                 </mat-table>
-                <mat-paginator #paginator [pageSize]=5 [pageSizeOptions]="[5,10,20]" [showFirstLastButtons]="true" >
+                <mat-paginator #paginator [pageSize]=10 [pageSizeOptions]="[5,10,20]" [showFirstLastButtons]="true" >
                 </mat-paginator>
               </mat-card>
 

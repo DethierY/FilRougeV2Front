@@ -59,13 +59,14 @@
         </div>
       </form>
       <button  
-      (click)="deleteTemoin()"
+      (click)="deleteTemoin(id)"
       [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
       [ngStyle.xs]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
-      >Supprimer<mat-icon>delete</mat-icon></button>
+      >Supprimer<mat-icon>delete</mat-icon></button> 
+
 
         <!-- Affichage tableau des affaires liées à cet objet -->
-        <mat-table [dataSource]="dataList" matSort>
+        <!-- <mat-table [dataSource]="dataList" matSort>
             
           <ng-container matColumnDef ="nom">
             <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Nom</strong></mat-header-cell>
@@ -83,6 +84,6 @@
             <mat-row *matRowDef="let row; columns:colonnes" ></mat-row>
         </mat-table>
         <mat-paginator #paginator [pageSize]=5 [pageSizeOptions]="[5,10,20]" [showFirstLastButtons]="true" >
-        </mat-paginator>
+        </mat-paginator> -->
 </div>
 

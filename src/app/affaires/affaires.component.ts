@@ -18,7 +18,7 @@ export class AffairesComponent implements OnInit {
   affaires = new Array<Affaire>();
   affaire: Affaire;
 
-  colonnes = ['nom', 'prenom', 'taille'];
+  colonnes = ['dossier', 'lieu', 'dateOuverture','actions','action'];
   dataList;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -30,17 +30,33 @@ export class AffairesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.appService.listerObjet().subscribe(
+    this.affaireService.getAffaires().subscribe(
       cases => {
         this.dataList = new MatTableDataSource(cases);
         this.dataList.paginator = this.paginator;
         this.dataList.sort = this.sort;
       }
     );
-
   }
 
-  afficherId(affaire) {
-    this.router.navigate(['/detail/:id', affaire.id], {relativeTo: this.route});
+
+  filtrerTableau(valeur: string) {
+    valeur= valeur.trim();
+    valeur=valeur.toLowerCase();
+    this.dataList.filter=valeur; 
   }
+
+  afficherId(id) {
+    this.router.navigate(['detail', id], {relativeTo: this.route});
+  }
+
+  supprimerId(id) {
+    this.affaireService.deleteAffaire(id).subscribe(
+      ()=>{
+        this.ngOnInit();
+        this.router.navigate([''], {relativeTo: this.route});
+      }
+    );
+  }
+
 }

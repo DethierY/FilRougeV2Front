@@ -16,7 +16,7 @@
             justify-content: flex-start;
             align-items: flex-start;
             flex-direction: column;
-            overflow: scroll;
+            /* overflow: scroll; */
         }
                          .boutonDiv {
                             margin-left: 0;
@@ -95,7 +95,17 @@
             flex-direction: column;
             overflow: scroll;
         }
-
+        .example-container {
+            display: flex;
+            flex-direction: column;
+            max-height: 500px;
+            min-width: 400px;
+          }
+          
+          .mat-table {
+            overflow: auto;
+            max-height: 500px;
+          }
         /* .outlet {
             width: 100%;
             height: 100em;

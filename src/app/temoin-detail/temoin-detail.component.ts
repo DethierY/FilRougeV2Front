@@ -36,6 +36,7 @@ export class TemoinDetailComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       console.log( params.get('id'));
       this.temoinId = +this.route.snapshot.paramMap.get('id');
+      // const temoinIdAsInt = parseInt(this.temoinId, 10);
 
       this.temoinService
       .getTemoin(this.temoinId)
@@ -45,30 +46,45 @@ export class TemoinDetailComponent implements OnInit {
     });
   }
 
-  deleteTemoin() {
-    this.temoinService.deleteTemoin(this.temoin.id).subscribe(
-      () => {
-        this.router.navigate(['../../'], {
-          relativeTo: this.route
-        });
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
-
 
 updateTemoin(form: NgForm) {
   console.log(this.temoin);
   this.temoinService.updateTemoin(this.temoin).subscribe(
     () => {
       this.temoinComponent.ngOnInit();
-      this.router.navigate(['/temoin'], {
-      });
+      // this.router.navigate(['/temoin'],{
+      // });
     },
   );
 
 }
+
+deleteTemoin(id) {
+  this.temoinService.deleteTemoin(this.temoin).subscribe(
+    () => {
+      this.temoinComponent.ngOnInit();
+      this.router.navigate(['/temoins'], {
+      });
+    },
+    err => {
+      console.log(err);
+    }
+  );
+}
+
+
+// deleteTemoin(id) {
+//   this.temoinService.deleteTemoin(this.temoin).subscribe(
+//     () => {
+//       this.router.navigate(['../../'], { //     ./../  et .././  et ../../. et ../ et / et ./
+//         relativeTo: this.route
+//       });
+//     },
+//     err => {
+//       console.log(err);
+//     }
+//   );
+// }
+
 
 }

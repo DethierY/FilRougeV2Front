@@ -75,7 +75,7 @@ import { AgentAjoutComponent } from './agent-ajout/agent-ajout.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  {path: 'accueil', component: AccueilComponent, data: { title: 'Component acceuil' }},
+  {path: 'accueil', component: AccueilComponent, data: { title: 'Component accueil' }},
   {path: 'vehicules', component: VehiculesComponent, data: { title: 'Component vehicule' }, children: [
     {path: 'create', component: VAjoutComponent, data: { title: 'Component ajoutVehicule' }},
     {path: 'detail/:id', component: VDetailsComponent, data: { title: 'Component detailVehicule' }},
@@ -91,12 +91,13 @@ const routes: Routes = [
   {path: 'temoins', component: TemoinsComponent, data: { title: 'Component temoins' }, children: [
     {path: 'create', component: TemoinAjoutComponent, data: { title: 'Component createTemoin' }},
     {path: 'detail/:id', component: TemoinDetailComponent, data: { title: 'Component detailTemoin' }},
+    // {path: ':id', component: TemoinDetailComponent, data: { title: 'Component detailTemoin' }},
   ]},
   {path: 'victimes', component: VictimesComponent, data: { title: 'Component victimes' }, children: [
     {path: 'create', component: VictimeAjoutComponent, data: { title: 'Component createVictime' }},
     {path: 'detail/:id', component: VictimeDetailComponent, data: { title: 'Component detailVictime' }},
   ]},
-  {path: 'affaires', component: AffairesComponent, data: { title: 'Component affaires' }, children: [
+  {path: 'affaire', component: AffairesComponent, data: { title: 'Component affaires' }, children: [
     {path: 'create', component: AffaireAjoutComponent, data: { title: 'Component createAffaire' }},
     {path: 'detail/:id', component: AffaireDetailComponent, data: { title: 'Component detailAffaire' }},
   ]},

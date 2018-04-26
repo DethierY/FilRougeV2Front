@@ -1,125 +1,32 @@
-<div class="container" 
-[ngStyle.md]="{'width.em': 50, 'height.em': 60}"
-[ngStyle.sm]="{'width.em': 40, 'height.em': 60}" 
-[ngStyle.xs]="{'width.em': 30, 'height.em': 60}">
-
-    <div class="titre"
-    [ngStyle.md]="{'width.em': 50, 'height.em': 4}"
-    [ngStyle.sm]="{'width.em': 40, 'height.em': 4}" 
-    [ngStyle.xs]="{'width.em': 30, 'height.em': 4}">
-        <h1>Détails d'une affaire</h1>
-    </div>
-
-    <form #formCreate (ngSubmit)="updateSuspect(formCreate)" class="formulaire"
-    [ngStyle.md]="{'width.em': 50, 'height.em': 66}"
-    [ngStyle.sm]="{'width.em': 40, 'height.em': 56}" 
-    [ngStyle.xs]="{'width.em': 30, 'height.em': 66}">
-
-        <div class="ligne1" 
-        fxLayout.sm="column"
-        fxLayout.xs="column">
-                <div class="coteGauche"
-                fxLayout="column"
-                fxLayout.sm="row"
-                fxLayout.xs="row"
-                [ngStyle.sm]="{'width.%': 100, 'height.em': 15}" 
-                [ngStyle.xs]="{'width.%': 100, 'height.em': 15}"> 
-  
-                    <!--photo-->
-                    <div class="photo">
-                      <img class="image" src="{{suspect.photo}}" alt="photo du suspect {{suspect.pseudo}}">
-                    </div>
-                    <!--pseudo-->
-                    <div class="pseudo">
-                      <mat-form-field>
-                          <input matInput type="text" name="pseudo" placeholder="{{suspect.pseudo}}" 
-                          [(ngModel)]="suspect.pseudo"> 
-                      </mat-form-field>
-                    </div>
-                </div>
-              
-                <div class="coteDroit"
-                fxLayout="column"
-                [ngStyle.sm]="{'width.%': 100, 'height.em': 25}" 
-                [ngStyle.xs]="{'width.%': 100, 'height.em': 25}">
-
-
-                  <!--couleur peau-->
-                  <mat-form-field class="couleurp">
-                    <mat-select placeholder="{{suspect.couleurPeau}}" name="peau" [(ngModel)]="suspect.couleurPeau">
-                        <mat-option *ngFor="let cp of couleurPeau" [value]="cp.value" >
-                          {{ cp.viewValue }}
-                        </mat-option>
-                      </mat-select>
-                  </mat-form-field> 
-
-                  <!--couleur cheveux-->
-                  <mat-form-field class="couleurc">
-                    <mat-select placeholder="{{suspect.couleurCheveux}}" name="cheveux"  [(ngModel)]="suspect.couleurCheveux">
-                        <mat-option *ngFor="let c of couleurCheveux" [value]="c.value" >
-                          {{ c.viewValue }}
-                        </mat-option>
-                      </mat-select>
-                  </mat-form-field>
-
-                  <!--taille-->
-                  <mat-form-field class="taille">
-                    <input matInput type="text" name="taille" placeholder="{{suspect.taille}}" [(ngModel)]="suspect.taille"> 
-                 </mat-form-field>
-       
-                </div>
-       </div>
-       <div class="ligne2">
-
-                  <!--signes particulier-->
-                  <textarea matInput type ="text"  name="signe" placeholder="{{suspect.signe_particulier}}" 
-                  [(ngModel)]="suspect.signe_particuier"></textarea>
-
-
-       </div>
-       <div class="ligne3">
-            <button 
-            [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
-            [ngStyle.xs]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
-            type="submit">Modifier<mat-icon>edit</mat-icon></button>
-
-
+<div class="" >
+    
+        <div class="">
+            <h1>Détail d'une affaire</h1>
         </div>
-      </form>
-      <button  
-      (click)="deleteSuspect()"
-      [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
-      [ngStyle.xs]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
-      >Supprimer<mat-icon>delete</mat-icon></button>
-
-        <!-- Affichage tableau des listes liées à l'affaire -->
-        <mat-table [dataSource]="dataList" matSort>
-            
-          <ng-container matColumnDef ="nomSuspect">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Suspect</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.nomSuspect}}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef ="nomVictime">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Victime</mat-header-cell>
-          <mat-cell *matCellDef="let element">{{element.nomVictime}}</mat-cell>
-      </ng-container>
-      <ng-container matColumnDef ="nomSTemoin">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Témoin</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.nomTemoin}}</mat-cell>
-    </ng-container>
-          <ng-container matColumnDef ="nomVehicule">
-            <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Véhicule</strong></mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.nomVehicule | uppercase}}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef ="nomArme">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Arme</mat-header-cell>
-              <mat-cell *matCellDef="let element">{{element.nomArme}}</mat-cell>
-            </ng-container>
-
-            <mat-header-row *matHeaderRowDef="colonnes"></mat-header-row>
-            <mat-row *matRowDef="let row; columns:colonnes" ></mat-row>
-        </mat-table>
-        <mat-paginator #paginator [pageSize]=5 [pageSizeOptions]="[5,10,20]" [showFirstLastButtons]="true" >
-        </mat-paginator>
-</div>
-
+                     
+        <form #formUpdate (ngSubmit)="onSubmit(formUpdate)" class="">         
+                        <mat-form-field>
+                          <input matInput type="text" name="dossier" placeholder="dossier" 
+                          [(ngModel)]="affaire.dossier"> 
+                        </mat-form-field>
+                  
+                
+                        <mat-form-field class="">
+                          <input matInput type="text" name="lieu" placeholder="lieu" [(ngModel)]="affaire.lieu"> 
+                        </mat-form-field>
+           
+                        <mat-form-field class="">
+                          <input matInput type ="text"  name="dateOuverture" placeholder="date: aaaa/mm/jj"
+                          [(ngModel)]="affaire.dateOuverture">
+                          </mat-form-field>
+    
+          
+           <div class="ligne3">
+    
+                <button  (click)="updateAffaire(affaire)"
+                [ngStyle.sm]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
+                [ngStyle.xs]="{'width.%': 40, 'height.em': 4, 'border-radius.%': 0}" 
+                type="submit">Enregistrer les modifications</button>
+            </div>
+        </form>
+    </div>

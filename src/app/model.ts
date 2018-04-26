@@ -2,7 +2,7 @@ export class Affaire {
 
     public id?: number; // id auto généré
     dateOuverture: Date;
-    nom: string;
+    dossier: string;
     lieu: string;
     vehiculesImpliques?: VehiculeImplique[];
     armesImpliquees?: ArmeImpliquee[];

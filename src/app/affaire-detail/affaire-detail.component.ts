@@ -15,14 +15,10 @@ import { ViewChild } from '@angular/core';
 })
 export class AffaireDetailComponent implements OnInit {
 
-  affaireId: number;
-  affaire = new Affaire(); // objet
+  affaire = new Affaire();
+  editing: boolean;
+  affaireId:number;
 
-  colonnes = ['nomSuspect', 'nomVictime', 'nomTemoin', 'nomVehicule', 'nomArme'];
-  dataList;
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
 
   constructor(
@@ -45,7 +41,16 @@ export class AffaireDetailComponent implements OnInit {
     });
   }
 
-  deleteAffairet() {
+  onSubmit(spt: NgForm) {
+    this.affaireService.updateAffaire(this.affaire)
+    .subscribe( () => {
+      this.affaireComponent.ngOnInit();
+      this.router.navigate(['../'], {
+        relativeTo: this.route
+      });
+    } ); }
+
+  deleteAffaire() {
     this.affaireService.deleteAffaire(this.affaire.id).subscribe(
       () => {
         this.router.navigate(['../../'], {
