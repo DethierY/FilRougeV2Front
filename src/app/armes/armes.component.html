@@ -10,7 +10,7 @@
     [ngStyle.sm]="{'width.%': 80, 'height.em': 4, 'margin.%': 1, 'border-radius': 0}" 
     [ngStyle.xs]="{'width.%': 80, 'height.em': 4, 'margin.%': 0, 'border-radius': 0}">
       <p class="texte" fxHide.xs>Ajouter une arme</p>
-      <mat-icon class="icon" aria-label="Icon plus pour ajouter un véhicule" >add_circle</mat-icon>
+      <mat-icon class="icon" aria-label="Icon plus pour ajouter une arme" >add_circle</mat-icon>
     </button>
 </div>
 
@@ -25,7 +25,7 @@
 
               
                 <!--Filtre pour recherche une arme -->
-                <mat-form-field>
+               <mat-form-field>
                   <input matInput (keyup)="filtrerTableau($event.target.value)" placeholder="Recherche d'un arme">
                 </mat-form-field>
                 <!-- Affichage tableau des armes -->
@@ -39,10 +39,22 @@
                       <mat-header-cell *matHeaderCellDef mat-sort-header>Modèle</mat-header-cell>
                       <mat-cell *matCellDef="let element">{{element.modele}}</mat-cell>
                     </ng-container>
-                    <ng-container matColumnDef ="num">
+                    <!-- <ng-container matColumnDef ="noSerie">
                         <mat-header-cell *matHeaderCellDef mat-sort-header>Numéro de série</mat-header-cell>
-                        <mat-cell *matCellDef="let element">{{element.num}}</mat-cell>
+                        <mat-cell *matCellDef="let element">{{element.noSerie}}</mat-cell>
+                    </ng-container> -->
+                    <ng-container matColumnDef="editer">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+                      <mat-cell *matCellDef="let element" >
+                           <button mat-raised-button (click)="afficherId(element.id)" >Editer</button> 
+                      </mat-cell>
                     </ng-container>
+                   <!-- <ng-container matColumnDef="supprimer">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+                      <mat-cell *matCellDef="let element" >
+                           <button mat-raised-button (click)="supprimerId(element.id)" >Supprimer</button> 
+                      </mat-cell>
+                  </ng-container> -->
                     <mat-header-row *matHeaderRowDef="colonnes"></mat-header-row>
                     <mat-row *matRowDef="let row; columns:colonnes" ></mat-row>
                 </mat-table>

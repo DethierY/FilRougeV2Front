@@ -15,10 +15,12 @@ import { ViewChild } from '@angular/core';
 export class ArmesComponent implements OnInit {
 
 
-  armes = new Array<Arme>();
+  // armes = new Array<Arme>();
   arme: Arme;
+  armes: Arme[]; // comme ligne commentaire, tableau
 
-  colonnes = ['type', 'modele', 'num'];
+  // colonnes = ['type', 'modele', 'editer', 'supprimer'];
+  colonnes = ['type', 'modele', 'editer'];
   dataList;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -27,23 +29,42 @@ export class ArmesComponent implements OnInit {
 
 
   constructor(
-    public appService: AppService, private route: ActivatedRoute,
-    private router: Router, public armeService: ArmeService
+    private route: ActivatedRoute, // permet de manipuler l'url
+    private router: Router, // pour gerer la navigation
+    public armeService: ArmeService
   ) { }
 
+  // se genere ou declanche a la creation
   ngOnInit() {
 
-    this.appService.listerObjet().subscribe(
-      cases => {
-        this.dataList = new MatTableDataSource(cases);
+    this.armeService.getArmes().subscribe(
+      data => {
+        this.dataList = new MatTableDataSource(data);
         this.dataList.paginator = this.paginator;
         this.dataList.sort = this.sort;
       }
     );
   }
 
-  afficherId(arme) {
-    this.router.navigate(['/detail/:id', arme.id], {relativeTo: this.route});
+  afficherId(id) {
+    console.log('l id est' + id);
+   // recuperer une arme grace à son id
+    this.router.navigate(['detail', id], {relativeTo: this.route});
+  }
+
+  supprimerId(id) {
+  this.armeService.deleteArme(id).subscribe(
+  () => {
+    this.ngOnInit();
+    this.router.navigate([''], {relativeTo: this.route});
+  }
+);
+  }
+
+  filtrerTableau(filterValue: string) {
+    filterValue = filterValue.trim(); // enleve les espaces
+    filterValue = filterValue.toLowerCase();
+    this.dataList.filter = filterValue;
   }
 
 }

@@ -25,7 +25,9 @@ export class ArmeService {
 
   getArmes(): Observable<Arme[]> {
     console.log('le get fonctionne');
-    return this.http.get(`http://localhost:8080/arme/list`) as Observable<Arme[]>;
+    // return this.http.get(`http://localhost:8080/arme/list`) as Observable<Arme[]>;
+    return this.http.get<Arme[]>(`http://localhost:8080/arme/list`); // equivalent
+
   }
 
   getArme(id: number): Observable<Arme> {
@@ -37,7 +39,7 @@ export class ArmeService {
 
   updateArme(arme: Arme): Observable<Arme> {
     console.log('l\'appel à la méthode update fonctionne');
-    return this.http.put<Arme>('http://localhost:8080/arme/edit/' +
+    return this.http.put<Arme>('http://localhost:8080/arme/update/' +
     arme.id, arme, httpOptions) as Observable<Arme>;
 
   }

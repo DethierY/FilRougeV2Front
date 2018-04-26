@@ -98,7 +98,7 @@ export class Arme {
     type: string;
     modele: string;
     calibre: string;
-    numeroSerie: string;
+    noSerie: string;
 }
 
 export class ArmeImpliquee {
