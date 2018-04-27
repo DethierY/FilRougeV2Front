@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { ActivatedRouteSnapshot } from '@angular/router/src/router_state';
+import { Vehicule, Affaire } from '../model';
 import { VehiculeService } from '../vehicule.service';
-import { Vehicule } from '../model';
-import { NgForm } from '@angular/forms';
-import {VehiculesComponent } from '../vehicules/vehicules.component';
-
+import { VehiculesComponent} from '../vehicules/vehicules.component';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-v-details',
@@ -14,60 +14,47 @@ import {VehiculesComponent } from '../vehicules/vehicules.component';
 })
 export class VDetailsComponent implements OnInit {
 
-   public vehiculesId;
+  id: number;
+  vehicule: Vehicule;
+  affaire: Affaire;
+  affaires: Affaire[];
 
+  colonnes = [ "dossier", "lieu", "date d'ouverture"]
+  dataList;
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
-  vehiculeId: number;
-  vehicule = new Vehicule(); // objet
-
-   constructor(
-     private vehiculeComponent: VehiculesComponent,
-    private route: ActivatedRoute,
-    private router: Router,
-    private vehiculeService: VehiculeService,
-    ) { }
-
-
+  constructor(private vehiculeService: VehiculeService,
+              private vehiculesComponent: VehiculesComponent,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // Obtention du véhicule détaillé dans ce composant
     this.route.paramMap.subscribe((params: ParamMap) => {
-      console.log( params.get('id'));
-      this.vehiculeId = +this.route.snapshot.paramMap.get('id');
-
-      this.vehiculeService
-      .getVehicule(this.vehiculeId)
-      .subscribe(
-        vehicule => (this.vehicule = vehicule),
-     );
-    });
-      }
-
-
-      deleteVehicule() {
-        this.vehiculeService.deleteVehicule(this.vehicule.id).subscribe(
-          () => {
-            this.router.navigate(['../../'], {
-              relativeTo: this.route
-            });
-          },
-          err => {
-            console.log(err);
-          }
-        );
-      }
-
-
-    updateVehicule(form: NgForm) {
-      console.log(this.vehicule);
-      this.vehiculeService.updateVehicule(this.vehicule).subscribe(
-        () => {
-          this.vehiculeComponent.ngOnInit();
-          this.router.navigate(['/vehicule'], {
-          });
-        },
+      this.id = +this.route.snapshot.paramMap.get('id');
+      this.vehiculeService.getVehicule(this.id).subscribe(
+        vehicule => this.vehicule = vehicule
       );
+      // Obtention de la liste des affaires dans lesquelles le véhicule est impliqué
+      this.vehiculeService.getAffairesOfVehicule(this.id).subscribe(
+        cases => {
+          this.dataList = new MatTableDataSource(cases);
+          this.dataList.paginator = this.paginator;
+          this.dataList.sort = this.sort;
+        }
+      );
+    });
+  }
 
-    }
-
+  // Suppression du véhicule détaillé dans ce composant
+  deleteVehicule() {
+    this.vehiculeService.deleteVehicule(this.vehicule.id).subscribe(
+      () => {
+        this.vehiculesComponent.ngOnInit();
+        this.router.navigate([`../../vehicules`], {relativeTo: this.route});
+      }
+    );
+  }
 }

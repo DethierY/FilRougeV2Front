@@ -78,6 +78,7 @@ const routes: Routes = [
   {path: 'accueil', component: AccueilComponent, data: { title: 'Component accueil' }},
   {path: 'vehicules', component: VehiculesComponent, data: { title: 'Component vehicule' }, children: [
     {path: 'create', component: VAjoutComponent, data: { title: 'Component ajoutVehicule' }},
+    {path: 'edit/:id', component: VAjoutComponent, data: { title: 'Component ajoutVehicule' }},
     {path: 'detail/:id', component: VDetailsComponent, data: { title: 'Component detailVehicule' }},
   ]},
    {path: 'suspect', component: SuspectsComponent, data: { title: 'Component suspects' }, children: [
