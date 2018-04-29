@@ -53,7 +53,7 @@ export class VDetailsComponent implements OnInit {
     this.vehiculeService.deleteVehicule(this.vehicule.id).subscribe(
       () => {
         this.vehiculesComponent.ngOnInit();
-        this.router.navigate([`../../vehicules`], {relativeTo: this.route});
+        this.router.navigate([`../../../ehicules`], {relativeTo: this.route});
       }
     );
   }
