@@ -1,6 +1,6 @@
 export class Affaire {
 
-    public id?: number; // id auto généré
+    public id?: number;
     dateOuverture: Date;
     dossier: string;
     lieu: string;

@@ -3,6 +3,7 @@
   [ngStyle.sm]="{'width.%': 100, 'height.em': 10, 'margin.%': 0, 'flex-direction': column, 'margin-left.em': 0}" 
   [ngStyle.xs]="{'width.%': 100, 'height.em': 12, 'margin.%': 0, 'flex-direction': column}">
 
+  <!-- Bouton pour afficher le formulaire de création d'un véhicule -->
   <button  class="bouton" routerLink="create"
     [ngStyle.md]="{'width.%': 30, 'height.em': 5, 'margin-left.%': 1, 'margin.%': 1}"
     [ngStyle.sm]="{'width.%': 80, 'height.em': 4, 'margin.%': 1, 'border-radius': 0}" 
@@ -14,6 +15,7 @@
 
 <div class="container"  [ngStyle.md]="{'justify-content': center}">
 
+  <!-- Côté gauche de l'écran -->
   <mat-card class="coteGauche"
     [ngStyle.lg]="{'margin-top.em': 1}"
     [ngStyle.md]="{'width.%': 80, 'height.em': 14, 'margin-left.em': 0, 'margin-bottom': 0.5}"
@@ -55,7 +57,7 @@
 
   </mat-card>
 
-  <!--coté droit-->
+  <!--coté droit de l'écran-->
   <mat-card class="coteDroit"
     [ngStyle.md]="{'width.%': 80, 'height.%': auto, 'margin-bottom': 0.5}"
     [ngStyle.sm]="{'width.%': 100, 'height.em': 30, 'margin-bottom': 0.5}" 

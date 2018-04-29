@@ -7,7 +7,6 @@ import { Affaire, Vehicule } from './model';
 import { HttpHeaders } from '@angular/common/http';
 import { map, delay, tap } from 'rxjs/operators';
 
-
 const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
 @Injectable()
@@ -15,12 +14,10 @@ export class VehiculeService {
 
   constructor(private http: HttpClient) { }
 
-
   createVehicule(vehicule: Vehicule): Observable<Vehicule> {
     console.log('le create fonctionne');
     return this.http.post<Vehicule>(`http://localhost:8080/vehicule/create`, vehicule);
   }
-
 
   getVehicules(): Observable<Vehicule[]> {
     console.log('le get fonctionne');

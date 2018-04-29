@@ -19,6 +19,7 @@ export class VDetailsComponent implements OnInit {
   affaire: Affaire;
   affaires: Affaire[];
 
+  // Définition des colonnes du tableau de présentation
   colonnes = [ "dossier", "lieu", "date d'ouverture"]
   dataList;
 

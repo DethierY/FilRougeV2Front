@@ -5,9 +5,7 @@ import { Subject } from 'rxjs/Subject';
 import { NgForm, FormsModule } from '@angular/forms';
 import { Victime } from './model';
 import { HttpHeaders } from '@angular/common/http';
-// import { AppService } from './app.service';
 import { map, delay, tap } from 'rxjs/operators';
-
 
 const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
