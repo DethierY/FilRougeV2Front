@@ -83,6 +83,7 @@ export class Vehicule {
     couleur: string;
     marque: string;
     immatriculation: string;
+    proprietaire?: Personne;
 }
 
 export class VehiculeImplique {

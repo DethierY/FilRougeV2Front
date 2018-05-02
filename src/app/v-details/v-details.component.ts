@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { ActivatedRouteSnapshot } from '@angular/router/src/router_state';
-import { Vehicule, Affaire } from '../model';
+import { Vehicule, Affaire, Personne } from '../model';
 import { VehiculeService } from '../vehicule.service';
 import { VehiculesComponent} from '../vehicules/vehicules.component';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
@@ -18,6 +18,7 @@ export class VDetailsComponent implements OnInit {
   vehicule: Vehicule;
   affaire: Affaire;
   affaires: Affaire[];
+  proprietaire: Personne;
 
   // Définition des colonnes du tableau de présentation
   colonnes = [ "dossier", "lieu", "date d'ouverture"]
@@ -54,7 +55,7 @@ export class VDetailsComponent implements OnInit {
     this.vehiculeService.deleteVehicule(this.vehicule.id).subscribe(
       () => {
         this.vehiculesComponent.ngOnInit();
-        this.router.navigate([`../../../ehicules`], {relativeTo: this.route});
+        this.router.navigate([`../../../vehicules`], {relativeTo: this.route});
       }
     );
   }
